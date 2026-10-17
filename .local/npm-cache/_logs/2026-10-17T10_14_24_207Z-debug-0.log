@@ -1,0 +1,44 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.12.1
+2 info using node@v24.14.1
+3 silly config load:file:C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:D:\solve-project\app\.npmrc
+5 silly config load:file:C:\Users\Satyajeet\.npmrc
+6 silly config load:file:C:\Users\Satyajeet\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install laravel-echo pusher-js
+8 verbose argv "install" "laravel-echo" "pusher-js" "--cache" ".local/npm-cache" "--prefer-offline" "--no-audit" "--no-fund" "--fetch-retries" "0"
+9 verbose logfile logs-max:10 dir:D:\solve-project\app\.local\npm-cache\_logs\2026-10-17T10_14_24_207Z-
+10 verbose logfile D:\solve-project\app\.local\npm-cache\_logs\2026-10-17T10_14_24_207Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with ECONNREFUSED
+13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+14 silly idealTree buildDeps
+15 silly fetch manifest laravel-echo@*
+16 silly packumentCache full:https://registry.npmjs.org/laravel-echo cache-miss
+17 silly fetch manifest pusher-js@*
+18 silly packumentCache full:https://registry.npmjs.org/pusher-js cache-miss
+19 silly placeDep ROOT laravel-echo@ OK for:  want: *
+20 silly placeDep ROOT pusher-js@ OK for:  want: *
+21 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+22 verbose stack Error: request to https://registry.npmjs.org/laravel-echo failed: cache mode is 'only-if-cached' but no cached response is available.
+22 verbose stack     at cacheFetch (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\make-fetch-happen\lib\cache\index.js:12:13)
+22 verbose stack     at async fetch (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\make-fetch-happen\lib\fetch.js:98:7)
+22 verbose stack     at async RegistryFetcher.packument (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\pacote\lib\registry.js:90:19)
+22 verbose stack     at async RegistryFetcher.manifest (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\pacote\lib\registry.js:128:23)
+22 verbose stack     at async #fetchManifest (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1227:20)
+22 verbose stack     at async #nodeFromEdge (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1061:19)
+22 verbose stack     at async #buildDepStep (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:917:11)
+22 verbose stack     at async Arborist.buildIdealTree (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:170:7)
+22 verbose stack     at async Promise.all (index 1)
+22 verbose stack     at async Arborist.reify (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:111:5)
+23 error code ENOTCACHED
+24 error request to https://registry.npmjs.org/laravel-echo failed: cache mode is 'only-if-cached' but no cached response is available.
+25 silly unfinished npm timer reify 1792232065386
+26 silly unfinished npm timer reify:loadTrees 1792232065390
+27 verbose cwd D:\solve-project\app
+28 verbose os Windows_NT 10.0.26300
+29 verbose node v24.14.1
+30 verbose npm  v11.12.1
+31 verbose exit 1
+32 verbose code 1
+33 error A complete log of this run can be found in: D:\solve-project\app\.local\npm-cache\_logs\2026-10-17T10_14_24_207Z-debug-0.log

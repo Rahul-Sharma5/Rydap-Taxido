@@ -1,0 +1,22 @@
+{
+    "Ticket": true,
+    "CCAvenue": false,
+    "FlutterWave": false,
+    "Instamojo": false,
+    "Mollie": false,
+    "PayPal": true,
+    "Paystack": false,
+    "PhonePe": true,
+    "RazorPay": true,
+    "Sslcommerz": false,
+    "Stripe": false,
+    "Twilio": false,
+    "Alphanet": false,
+    "Msg91": false,
+    "Nexmo": false,
+    "TwoFactor": true,
+    "Midtrans": false,
+    "Iyzico": false,
+    "BKash": false,
+    "Taxido": true
+}

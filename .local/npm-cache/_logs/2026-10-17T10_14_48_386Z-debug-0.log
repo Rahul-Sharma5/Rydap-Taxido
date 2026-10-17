@@ -1,0 +1,54 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.12.1
+2 info using node@v24.14.1
+3 silly config load:file:C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:D:\solve-project\app\.npmrc
+5 silly config load:file:C:\Users\Satyajeet\.npmrc
+6 silly config load:file:C:\Users\Satyajeet\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install laravel-echo@2.6.1 pusher-js@8.6.0
+8 verbose argv "install" "laravel-echo@2.6.1" "pusher-js@8.6.0" "--cache" ".local/npm-cache" "--offline" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:D:\solve-project\app\.local\npm-cache\_logs\2026-10-17T10_14_48_386Z-
+10 verbose logfile D:\solve-project\app\.local\npm-cache\_logs\2026-10-17T10_14_48_386Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly fetch manifest laravel-echo@2.6.1
+15 silly packumentCache full:https://registry.npmjs.org/laravel-echo cache-miss
+16 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+17 http fetch GET 200 https://registry.npmjs.org/laravel-echo 32ms (cache stale)
+18 silly packumentCache full:https://registry.npmjs.org/laravel-echo set size:288301 disposed:false
+19 silly fetch manifest pusher-js@8.6.0
+20 silly packumentCache full:https://registry.npmjs.org/pusher-js cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/pusher-js 137ms (cache stale)
+22 silly packumentCache full:https://registry.npmjs.org/pusher-js set size:213333 disposed:false
+23 silly fetch manifest socket.io-client@*
+24 silly packumentCache full:https://registry.npmjs.org/socket.io-client cache-miss
+25 silly placeDep ROOT laravel-echo@2.6.1 OK for:  want: 2.6.1
+26 silly placeDep ROOT pusher-js@8.6.0 OK for:  want: 8.6.0
+27 silly fetch manifest tweetnacl@^1.0.3
+28 silly packumentCache full:https://registry.npmjs.org/tweetnacl cache-miss
+29 silly fetch manifest tweetnacl@^1.0.3
+30 silly packumentCache full:https://registry.npmjs.org/tweetnacl cache-miss
+31 silly placeDep node_modules/pusher-js tweetnacl@ OK for: pusher-js@8.6.0 want: ^1.0.3
+32 verbose stack Error: request to https://registry.npmjs.org/tweetnacl failed: cache mode is 'only-if-cached' but no cached response is available.
+32 verbose stack     at cacheFetch (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\make-fetch-happen\lib\cache\index.js:12:13)
+32 verbose stack     at async fetch (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\make-fetch-happen\lib\fetch.js:98:7)
+32 verbose stack     at async RegistryFetcher.packument (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\pacote\lib\registry.js:90:19)
+32 verbose stack     at async RegistryFetcher.manifest (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\pacote\lib\registry.js:128:23)
+32 verbose stack     at async #fetchManifest (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1227:20)
+32 verbose stack     at async #nodeFromEdge (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1061:19)
+32 verbose stack     at async #buildDepStep (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:917:11)
+32 verbose stack     at async Arborist.buildIdealTree (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:170:7)
+32 verbose stack     at async Promise.all (index 1)
+32 verbose stack     at async Arborist.reify (C:\Users\Satyajeet\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:111:5)
+33 error code ENOTCACHED
+34 error request to https://registry.npmjs.org/tweetnacl failed: cache mode is 'only-if-cached' but no cached response is available.
+35 silly unfinished npm timer reify 1792232089520
+36 silly unfinished npm timer reify:loadTrees 1792232089521
+37 verbose cwd D:\solve-project\app
+38 verbose os Windows_NT 10.0.26300
+39 verbose node v24.14.1
+40 verbose npm  v11.12.1
+41 verbose exit 1
+42 verbose code 1
+43 error A complete log of this run can be found in: D:\solve-project\app\.local\npm-cache\_logs\2026-10-17T10_14_48_386Z-debug-0.log
