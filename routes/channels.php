@@ -4,16 +4,18 @@ use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\DB;
 
 
-function isCustomChatRole($user): bool
+if (!function_exists('isCustomChatRole')) {
+    function isCustomChatRole($user): bool
 {
-    if (!$user) return false;
+        if (!$user) return false;
 
-    $isCustomRole = $user->roles()
-        ->whereNull('module')
-        ->where('system_reserve', false)
-        ->exists();
+        $isCustomRole = $user->roles()
+            ->whereNull('module')
+            ->where('system_reserve', false)
+            ->exists();
 
-    return $isCustomRole && $user->hasPermissionTo('chat.index');
+        return $isCustomRole && $user->hasPermissionTo('chat.index');
+    }
 }
 
 
