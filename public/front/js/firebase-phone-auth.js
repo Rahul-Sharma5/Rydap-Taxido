@@ -103,6 +103,7 @@ export function createPhoneAuth(config) {
                 'auth/invalid-verification-code': 'Incorrect OTP. Please try again.',
                 'auth/code-expired': 'OTP expired. Please request a new OTP.',
                 'auth/session-expired': 'OTP session expired. Please request a new OTP.',
+                'auth/operation-not-allowed': 'Phone sign-in is disabled for this Firebase project or SMS is blocked for this destination region. Enable Phone sign-in and allow the SMS region in Firebase Authentication settings.',
                 'auth/network-request-failed': 'Network error. Check your connection and try again.',
                 'auth/too-many-requests': 'Too many attempts. Please try again later.'
             };

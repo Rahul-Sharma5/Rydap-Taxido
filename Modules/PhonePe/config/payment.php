@@ -9,9 +9,9 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'phonepe_merchant_id' => 'PGTESTPAYUAT',
-    'phonepe_salt_key' => '099eb0cd-02cf-4e2a-8aca-3e6c6aff0399',
-    'phonepe_salt_index' => '1',
+    'phonepe_merchant_id' => env('PHONEPE_MERCHANT_ID', ''),
+    'phonepe_salt_key' => env('PHONEPE_SALT_KEY', ''),
+    'phonepe_salt_index' => env('PHONEPE_SALT_INDEX', ''),
     'phonepe_sandbox_mode' => '1',
   ),
   'fields' => 

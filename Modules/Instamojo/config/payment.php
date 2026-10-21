@@ -9,9 +9,9 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'instamojo_client_id' => 'test_AeNrAvbO045XXQvwyCJIsPGYLgF5w7qPv9d',
-    'instamojo_client_secret' => 'test_v4PGHFHhhnHj8beyqME4y15uvfGmHtFHlis3breJChZgzCIUqvW1idwwEgarNfh4ZAnfINbuxfeNsc0b4K0PPwiy9Ga6U2px5ChBeSskksY4vMceiyvRPbL6Mla',
-    'instamojo_salt_key' => 'e69dec98ca6941d988b18f3cd8872f3d',
+    'instamojo_client_id' => env('INSTAMOJO_CLIENT_ID', ''),
+    'instamojo_client_secret' => env('INSTAMOJO_CLIENT_SECRET', ''),
+    'instamojo_salt_key' => env('INSTAMOJO_SALT_KEY', ''),
     'instamojo_sandbox_mode' => '1',
   ),
   'fields' => 

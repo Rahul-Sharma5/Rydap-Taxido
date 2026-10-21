@@ -76,24 +76,19 @@ class SettingRepository extends BaseRepository
                 $file= $request['firebase']['service_json'];
                 $fileContents = file_get_contents($file->getPathname());
                 $json= json_decode($fileContents, true);
-                if (json_last_error() !== JSON_ERROR_NONE) {
+                if (json_last_error() !== JSON_ERROR_NONE || ! is_array($json)) {
                     return back()->withErrors(['firebase.firebase_json' => 'The file must be a valid JSON.']);
                 }
 
-                $existingFilePath = config('firebase.projects.app.credentials');
-                if (file_exists($existingFilePath)) {
-                    unlink($existingFilePath);
-                }
-
-                $file->move(dirname($existingFilePath), basename($existingFilePath));
-                $request['firebase']['service_json'] = $json;
+                DotenvEditor::setKey('FIREBASE_CREDENTIALS_JSON_BASE64', base64_encode($fileContents));
+                DotenvEditor::save();
+                Config::set('firebase.projects.app.credentials', $json);
+                Config::set('services.firebase.credentials', $json);
+                $request['firebase']['service_json'] = null;
             } else {
-                if (file_exists(config('firebase.projects.app.credentials'))) {
-                    $fileContents= file_get_contents(config('firebase.projects.app.credentials'));
-                    $request['firebase']['service_json'] = json_decode($fileContents, true);
-                } else {
-                    $request['firebase']['service_json'] = null;
-                }
+                // Credentials stay in .env; do not duplicate the service-account
+                // private key in the settings database.
+                $request['firebase']['service_json'] = null;
             }
             $request['email']['mail_password']                    = decryptKey($request['email']['mail_password']);
             $request['google_reCaptcha']['site_key']              = decryptKey($request['google_reCaptcha']['site_key']);
@@ -203,6 +198,13 @@ class SettingRepository extends BaseRepository
                     'FIREBASE_MESSAGING_SENDER_ID' => $value['firebase']['firebase_messaging_sender_id'],
                     'FIREBASE_APP_ID' => $value['firebase']['firebase_app_id'],
                     'FIREBASE_MEASUREMENT_ID' => $value['firebase']['firebase_measurement_id'],
+                    'FIREBASE_WEB_API_KEY' => $value['firebase']['firebase_api_key'],
+                    'FIREBASE_WEB_AUTH_DOMAIN' => $value['firebase']['firebase_auth_domain'],
+                    'FIREBASE_WEB_PROJECT_ID' => $value['firebase']['firebase_project_id'],
+                    'FIREBASE_WEB_STORAGE_BUCKET' => $value['firebase']['firebase_storage_bucket'],
+                    'FIREBASE_WEB_MESSAGING_SENDER_ID' => $value['firebase']['firebase_messaging_sender_id'],
+                    'FIREBASE_WEB_APP_ID' => $value['firebase']['firebase_app_id'],
+                    'FIREBASE_WEB_MEASUREMENT_ID' => $value['firebase']['firebase_measurement_id'],
                 ]);
                 DotenvEditor::save();
             }

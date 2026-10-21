@@ -9,9 +9,9 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'stripe_api_key' => NULL,
+    'stripe_api_key' => env('STRIPE_API_KEY', ''),
     'stripe_secret_key' => env('STRIPE_SECRET_KEY', ''),
-    'stripe_webhook_secret_key' => '',
+    'stripe_webhook_secret_key' => env('STRIPE_WEBHOOK_SECRET_KEY', ''),
     'stripe_mode' => NULL,
   ),
   'fields' => 

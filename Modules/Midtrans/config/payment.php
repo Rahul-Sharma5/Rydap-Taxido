@@ -9,9 +9,9 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'merchant_id' => 'G334748764',
-    'client_key' => 'SB-Mid-client-AiQaCerfBXbr2k9B',
-    'server_key' => 'SB-Mid-server-9el9qqkW-0UGEJN_5OVq1iEQ',
+    'merchant_id' => env('MIDTRANS_MERCHANT_ID', ''),
+    'client_key' => env('MIDTRANS_CLIENT_KEY', ''),
+    'server_key' => env('MIDTRANS_SERVER_KEY', ''),
     'midtrans_sandbox_mode' => '1',
   ),
   'fields' => 

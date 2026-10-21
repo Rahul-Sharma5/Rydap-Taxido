@@ -9,7 +9,7 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'mollie_key' => 'te*********************************',
+    'mollie_key' => env('MOLLIE_KEY', ''),
     'mollie_webhook_url' => '',
     'mollie_mode' => 'sandbox',
   ),

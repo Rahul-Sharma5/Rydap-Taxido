@@ -9,9 +9,9 @@ return array (
   'subscription' => '1',
   'configs' => 
   array (
-    'paypal_client_id' => 'AWSvIg3u2s-p7g2RYkcktJLjtn3Rsw0LZAm0CoS6WeYtEoYmSzRC01bT0wVxz4whG3eN4bCu1vparBbp',
-    'paypal_client_secret' => 'EPtAGaQiNig5iYMuxtoFs_kVimBODw7axl7hSjn21YLPi6aCRJymPoU2n9GtLWNVqXGWj155XRK7Kpcm',
-    'paypal_webhook_id' => '94E22264B76477432',
+    'paypal_client_id' => env('PAYPAL_CLIENT_ID', ''),
+    'paypal_client_secret' => env('PAYPAL_CLIENT_SECRET', ''),
+    'paypal_webhook_id' => env('PAYPAL_WEBHOOK_ID', ''),
     'paypal_mode' => '1',
   ),
   'fields' => 

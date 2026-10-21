@@ -1129,9 +1129,12 @@ if (! function_exists('getFirebaseJson')) {
     function getFirebaseJson()
     {
         return cache()->remember('firebase_json', 3600, function () {
-            $path = config('firebase.projects.app.credentials');
-            if (file_exists($path)) {
-                return json_decode(file_get_contents($path), true);
+            $credentials = config('firebase.projects.app.credentials');
+            if (is_array($credentials)) {
+                return $credentials;
+            }
+            if (is_string($credentials) && is_file($credentials)) {
+                return json_decode(file_get_contents($credentials), true);
             }
             return null;
         });

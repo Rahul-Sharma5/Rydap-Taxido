@@ -50,7 +50,9 @@ return [
              *
              */
 
-            'credentials' => base_path(env('FIREBASE_CREDENTIALS','storage/app/firebase/firebase.json')),
+            'credentials' => env('FIREBASE_CREDENTIALS_JSON_BASE64')
+                ? json_decode(base64_decode(env('FIREBASE_CREDENTIALS_JSON_BASE64'), true), true, 512, JSON_THROW_ON_ERROR)
+                : base_path(env('FIREBASE_CREDENTIALS', 'storage/app/firebase/firebase.json')),
 
             /*
              * ------------------------------------------------------------------------

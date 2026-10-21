@@ -15,12 +15,15 @@ class CheckFirebaseAuth extends Command
             $this->line('PHP runtime: ' . PHP_VERSION);
             $this->line('TLS CA configured: ' . ((ini_get('curl.cainfo') || ini_get('openssl.cafile')) ? 'yes' : 'no'));
             $project = config('firebase.default');
-            $path = config("firebase.projects.{$project}.credentials");
-            if (!is_string($path) || !is_readable($path)) {
-                $this->error('Configured service-account file is not readable.');
+            $credentials = config("firebase.projects.{$project}.credentials");
+            if (is_array($credentials)) {
+                $account = $credentials;
+            } elseif (is_string($credentials) && is_readable($credentials)) {
+                $account = json_decode(file_get_contents($credentials), true, 512, JSON_THROW_ON_ERROR);
+            } else {
+                $this->error('Configured Firebase service-account credentials are not available.');
                 return self::FAILURE;
             }
-            $account = json_decode(file_get_contents($path), true, 512, JSON_THROW_ON_ERROR);
             $web = config('firebase-web');
             $this->line('Browser project: ' . $web['projectId']);
             $this->line('Admin project: ' . ($account['project_id'] ?? '(missing)'));

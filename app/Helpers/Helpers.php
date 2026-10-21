@@ -524,6 +524,17 @@ if (! function_exists('formatCurrency')) {
     function formatCurrency($amount, $currencyCode = null)
     {
         $currencyCode = $currencyCode ?? session('currency', getDefaultCurrencyCode());
+
+        // Laravel's currency formatter requires ext-intl. Keep dashboard and
+        // other views usable on PHP installations where that optional extension
+        // is not enabled.
+        if (! class_exists(\NumberFormatter::class)) {
+            $currencySymbol = $currencyCode ? getCurrencySymbolByCode($currencyCode) : null;
+            $formattedAmount = number_format((float) $amount, 2);
+
+            return ($currencySymbol ?: $currencyCode) . ' ' . $formattedAmount;
+        }
+
         return Number::currency((float) $amount, in: $currencyCode);
     }
 }

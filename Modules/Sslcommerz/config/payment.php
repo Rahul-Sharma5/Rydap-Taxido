@@ -9,8 +9,8 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'sslc_store_id' => 'compt6596e87558a0b',
-    'sslc_store_password' => 'compt6596e87558a0b@ssl',
+    'sslc_store_id' => env('SSLC_STORE_ID', ''),
+    'sslc_store_password' => env('SSLC_STORE_PASSWORD', ''),
     'sslc_sandbox_mode' => '1',
   ),
   'fields' => 

@@ -941,12 +941,13 @@
                                             <div class="col-md-10">
                                                 @php
                                                     $assetsPath = storage_path('app/firebase');
-                                                    $firebaseFilePath = config('firebase.projects.app.credentials');
+                                                    $firebaseCredentials = config('firebase.projects.app.credentials');
 
 
-                                                    $firebaseData = null;
+                                                    $firebaseData = is_array($firebaseCredentials) ? $firebaseCredentials : null;
                                                     $files = [];
-                                                    if (file_exists($firebaseFilePath) && is_file($firebaseFilePath)) {
+                                                    if (is_string($firebaseCredentials) && file_exists($firebaseCredentials) && is_file($firebaseCredentials)) {
+                                                        $firebaseFilePath = $firebaseCredentials;
                                                         $fileContents = file_get_contents($firebaseFilePath);
                                                         $firebaseData = json_decode($fileContents, true);
                                                         $files[] = $firebaseFilePath;

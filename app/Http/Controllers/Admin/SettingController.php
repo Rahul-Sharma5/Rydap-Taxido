@@ -41,9 +41,14 @@ class SettingController extends Controller
 
     public function downloadFirebase()
     {
-        $path = config('firebase.projects.app.credentials');
-        if (file_exists($path) && is_file($path)) {
-            return response()->download($path);
+        $credentials = config('firebase.projects.app.credentials');
+        if (is_array($credentials)) {
+            return response()->streamDownload(function () use ($credentials) {
+                echo json_encode($credentials, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+            }, 'firebase-service-account.json', ['Content-Type' => 'application/json']);
+        }
+        if (is_string($credentials) && is_file($credentials)) {
+            return response()->download($credentials);
         }
         return back()->with('error', 'File not found.');
     }

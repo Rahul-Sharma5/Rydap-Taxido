@@ -9,10 +9,10 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'bkash_app_key' => '5tunt4masn6pv2hnvte1sb5n3j',
-    'bkash_app_secret' => '1vggbqd4hqk9g96o9rrrp2jftvek578v7d2bnerim12a87dbrrka',
-    'bkash_username' => 'sandboxTestUser',
-    'bkash_password' => 'hWD@8vtzw0',
+    'bkash_app_key' => env('BKASH_APP_KEY', ''),
+    'bkash_app_secret' => env('BKASH_APP_SECRET', ''),
+    'bkash_username' => env('BKASH_USERNAME', ''),
+    'bkash_password' => env('BKASH_PASSWORD', ''),
     'bkash_sandbox_mode' => '1',
   ),
   'fields' => 

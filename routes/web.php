@@ -2,6 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
+
+// Serve public-disk uploads when public/storage is a regular directory instead
+// of Laravel's usual storage symlink (common in local Windows environments).
+Route::get('storage/{path}', function (string $path) {
+    abort_unless(Storage::disk('public')->exists($path), 404);
+
+    return Storage::disk('public')->response($path);
+})->where('path', '.*');
 
 
 Route::group(['middleware' => ['localization' , 'maintenance'], 'namespace' => 'Front'], function () {

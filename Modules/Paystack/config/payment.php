@@ -9,7 +9,7 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'paystack_public_key' => 'pk_test_1a3186e7b1d29d13acf2f6162d97ae15be22e541',
+    'paystack_public_key' => env('PAYSTACK_PUBLIC_KEY', ''),
     'paystack_secret_key' => env('PAYSTACK_SECRET_KEY', ''),
     'paystack_sandbox_mode' => '1',
   ),

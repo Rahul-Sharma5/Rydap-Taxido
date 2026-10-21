@@ -9,9 +9,9 @@ return array (
   'subscription' => 0,
   'configs' => 
   array (
-    'flw_public_key' => env('FLUTTERWAVE_PUBLIC_KEY', ''),
-    'flw_secret_key' => env('FLUTTERWAVE_SECRET_KEY', ''),
-    'flw_secret_hash' => env('FLUTTERWAVE_SECRET_HASH', ''),
+    'flw_public_key' => env('FLW_PUBLIC_KEY', ''),
+    'flw_secret_key' => env('FLW_SECRET_KEY', ''),
+    'flw_secret_hash' => env('FLW_SECRET_HASH', ''),
     'flw_sandbox_mode' => NULL,
   ),
   'fields' => 
